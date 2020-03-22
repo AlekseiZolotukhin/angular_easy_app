@@ -1,0 +1,9 @@
+<div>
+  <input [value]="name" (input)="name=$event.target.value"/><button (click)="add()">Add</button>
+</div>
+<div>
+  <label class="task-counter">{{getRemainingCount()}} remaining out of {{items.length}} tasks</label>
+</div>
+<ul *ngFor="let item of items">
+  <li (click)="toggleItem(item)"  [class.is-done]="item.isDone" >{{item.name}}</li>
+</ul>
